@@ -1,3 +1,4 @@
+<?php
 class Administrador {
 
     private $id;
@@ -6,3 +7,4 @@ class Administrador {
     private $senha;
 
 }
+?>

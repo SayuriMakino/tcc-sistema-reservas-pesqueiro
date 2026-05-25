@@ -1,3 +1,4 @@
+<?php
 class Reserva {
 
     private $id;
@@ -5,3 +6,4 @@ class Reserva {
     private $status;
 
 }
+?>
