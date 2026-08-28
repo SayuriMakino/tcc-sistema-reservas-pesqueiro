@@ -19,220 +19,321 @@ $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Clientes - SRP</title>
+    <title>Clientes - Vale Verde</title>
 
     <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 </head>
 
 <body>
 
-<div class="layout">
+    <div class="layout">
 
-    <aside class="sidebar">
+        <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
 
-        <div class="logo">
+        <aside class="sidebar">
 
-            <h2>Pesqueiro</h2>
+            <!-- LOGO -->
 
-            <p>Sistema de Reservas</p>
+            <div class="logo">
 
-        </div>
+                <div class="logo-icon">
+                    ≋
+                </div>
 
-        <ul class="menu">
+                <div class="logo-text">
 
-            <li>
-                <a href="../admin/dashboard.php">
-                    Dashboard
-                </a>
-            </li>
+                    <strong>Vale Verde</strong>
 
-            <li>
-                <a href="../reserva/listar.php">
-                    Reservas
-                </a>
-            </li>
+                    <span>Painel Admin</span>
 
-            <li>
-                <a href="listar.php" class="active">
-                    Clientes
-                </a>
-            </li>
-
-            <li>
-                <a href="#">
-                    Disponibilidade
-                </a>
-            </li>
-
-            <li>
-                <a href="#">
-                    Relatórios
-                </a>
-            </li>
-
-        </ul>
-
-    </aside>
-
-    <main class="content">
-
-        <div class="page-header">
-
-            <div>
-
-                <h1>Clientes</h1>
-
-                <p>
-                    Gerencie os clientes cadastrados no sistema.
-                </p>
+                </div>
 
             </div>
 
-            <a href="cadastrar.php" class="btn-primary">
-                + Novo cliente
-            </a>
 
-        </div>
+            <!-- MENU -->
 
-        <div class="search-box">
+            <nav class="menu">
 
-            <input
-                type="text"
-                id="buscarCliente"
-                placeholder="🔍 Buscar cliente por nome..."
-            >
+                <a href="../admin/dashboard.php" class="menu-item">
 
-        </div>
+                    <i class="fa-solid fa-grip"></i>
 
-        <?php if (count($clientes) > 0): ?>
+                    <span>Dashboard</span>
 
-            <div class="clients-grid" id="listaClientes">
+                </a>
 
-                <?php foreach ($clientes as $cliente): ?>
 
-                    <div
-                        class="client-card"
-                        data-nome="<?= strtolower(htmlspecialchars($cliente['nome'])) ?>"
-                    >
+                <a href="../reserva/listar.php" class="menu-item">
 
-                        <div class="client-header">
+                    <i class="fa-regular fa-calendar-check"></i>
 
-                            <div class="client-avatar">
+                    <span>Reservas</span>
 
-                                <?= strtoupper(substr($cliente['nome'], 0, 1)) ?>
+                </a>
+
+
+                <a href="listar.php" class="menu-item active">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <span>Clientes</span>
+
+                </a>
+
+
+                <a href="#" class="menu-item">
+
+                    <i class="fa-solid fa-dollar-sign"></i>
+
+                    <span>Valores</span>
+
+                </a>
+
+
+                <a href="#" class="menu-item">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    <span>Configurações</span>
+
+                </a>
+
+            </nav>
+
+
+            <!-- ADMINISTRADOR -->
+
+            <div class="admin-area">
+
+                <div class="admin-avatar">
+                    ♙
+                </div>
+
+                <div class="admin-info">
+
+                    <strong>Administrador</strong>
+
+                    <span>Administrador</span>
+
+                </div>
+
+                <a
+                    href="../admin/logout.php"
+                    class="logout"
+                    title="Sair">
+                    ⇥
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================================
+         CONTEÚDO
+         ===================================================== -->
+
+        <main class="content">
+
+            <!-- CABEÇALHO -->
+
+            <div class="page-header">
+
+                <div>
+
+                    <h1>Clientes</h1>
+
+                    <p>
+                        Gerencie os clientes cadastrados no sistema.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="cadastrar.php"
+                    class="btn-primary">
+                    + Novo cliente
+                </a>
+
+            </div>
+
+
+            <!-- BUSCA -->
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="buscarCliente"
+                    placeholder="🔍 Buscar cliente por nome...">
+
+            </div>
+
+
+            <!-- LISTA DE CLIENTES -->
+
+            <?php if (count($clientes) > 0): ?>
+
+                <div
+                    class="clients-grid"
+                    id="listaClientes">
+
+                    <?php foreach ($clientes as $cliente): ?>
+
+                        <div
+                            class="client-card"
+                            data-nome="<?= strtolower(htmlspecialchars($cliente['nome'])) ?>">
+
+                            <!-- CABEÇALHO DO CLIENTE -->
+
+                            <div class="client-header">
+
+                                <div class="client-avatar">
+
+                                    <?= strtoupper(substr($cliente['nome'], 0, 1)) ?>
+
+                                </div>
+
+
+                                <div>
+
+                                    <h3>
+                                        <?= htmlspecialchars($cliente['nome']) ?>
+                                    </h3>
+
+                                </div>
 
                             </div>
 
-                            <div>
 
-                                <h3>
-                                    <?= htmlspecialchars($cliente['nome']) ?>
-                                </h3>
+                            <!-- INFORMAÇÕES -->
+
+                            <div class="client-info">
+
+                                <p>
+
+                                    <strong>Telefone:</strong>
+
+                                    <?= htmlspecialchars($cliente['telefone']) ?>
+
+                                </p>
+
+
+                                <p>
+
+                                    <strong>Login:</strong>
+
+                                    <?= htmlspecialchars($cliente['login']) ?>
+
+                                </p>
+
+
+                                <p>
+
+                                    <strong>ID:</strong>
+
+                                    <?= htmlspecialchars($cliente['id']) ?>
+
+                                </p>
+
+                            </div>
+
+
+                            <!-- AÇÕES -->
+
+                            <div class="client-actions">
+
+                                <a
+                                    href="editar.php?id=<?= $cliente['id'] ?>"
+                                    class="btn-edit">
+                                    Editar
+                                </a>
+
+
+                                <a
+                                    href="excluir.php?id=<?= $cliente['id'] ?>"
+                                    class="btn-delete"
+                                    onclick="return confirm('Tem certeza que deseja excluir este cliente?')">
+                                    Excluir
+                                </a>
 
                             </div>
 
                         </div>
 
+                    <?php endforeach; ?>
 
-                        <div class="client-info">
-
-                            <p>
-                                <strong>Telefone:</strong>
-                                <?= htmlspecialchars($cliente['telefone']) ?>
-                            </p>
-
-                            <p>
-                                <strong>Login:</strong>
-                                <?= htmlspecialchars($cliente['login']) ?>
-                            </p>
-
-                            <p>
-                                <strong>ID:</strong>
-                                <?= htmlspecialchars($cliente['id']) ?>
-                            </p>
-
-                        </div>
+                </div>
 
 
-                        <div class="client-actions">
+            <?php else: ?>
 
-                            <a
-                                href="editar.php?id=<?= $cliente['id'] ?>"
-                                class="btn-edit"
-                            >
-                                Editar
-                            </a>
+                <!-- NENHUM CLIENTE -->
 
-                            <a
-                                href="excluir.php?id=<?= $cliente['id'] ?>"
-                                class="btn-delete"
-                                onclick="return confirm('Tem certeza que deseja excluir este cliente?')"
-                            >
-                                Excluir
-                            </a>
+                <div class="empty">
 
-                        </div>
+                    <h3>Nenhum cliente cadastrado</h3>
 
-                    </div>
+                    <p>
+                        Cadastre um cliente para começar.
+                    </p>
 
-                <?php endforeach; ?>
+                    <br>
 
-            </div>
+                    <a
+                        href="cadastrar.php"
+                        class="btn-primary">
+                        Cadastrar cliente
+                    </a>
 
-        <?php else: ?>
+                </div>
 
-            <div class="empty">
+            <?php endif; ?>
 
-                <h3>Nenhum cliente cadastrado</h3>
+        </main>
 
-                <p>
-                    Cadastre um cliente para começar.
-                </p>
+    </div>
 
-                <br>
 
-                <a href="cadastrar.php" class="btn-primary">
-                    Cadastrar cliente
-                </a>
+    <!-- =====================================================
+     BUSCA DE CLIENTES
+     ===================================================== -->
 
-            </div>
+    <script>
+        const campoBusca = document.getElementById('buscarCliente');
 
-        <?php endif; ?>
+        campoBusca.addEventListener('input', function() {
 
-    </main>
+            const busca = this.value.toLowerCase();
 
-</div>
+            const cards = document.querySelectorAll('.client-card');
 
-<script>
+            cards.forEach(function(card) {
 
-const campoBusca = document.getElementById('buscarCliente');
+                const nome = card.getAttribute('data-nome');
 
-campoBusca.addEventListener('input', function () {
+                if (nome.includes(busca)) {
 
-    const busca = this.value.toLowerCase();
+                    card.style.display = '';
 
-    const cards = document.querySelectorAll('.client-card');
+                } else {
 
-    cards.forEach(function (card) {
+                    card.style.display = 'none';
 
-        const nome = card.getAttribute('data-nome');
+                }
 
-        if (nome.includes(busca)) {
+            });
 
-            card.style.display = '';
-
-        } else {
-
-            card.style.display = 'none';
-
-        }
-
-    });
-
-});
-
-</script>
+        });
+    </script>
 
 </body>
 
