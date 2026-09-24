@@ -22,6 +22,8 @@ $nome = $_SESSION['cliente_nome'];
 
     <title>Área do Cliente - SRP</title>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <link rel="stylesheet" href="../css/style.css">
 
 </head>
@@ -34,7 +36,7 @@ $nome = $_SESSION['cliente_nome'];
 
         <div class="cliente-logo">
 
-            <span>🎣</span>
+            <span><i class="bi bi-water"></i></span>
 
             <div>
                 <h1>Pesqueiro Recanto Verde</h1>
@@ -68,7 +70,7 @@ $nome = $_SESSION['cliente_nome'];
             <div class="cliente-card">
 
                 <div class="cliente-card-icon">
-                    📋
+                    <i class="bi bi-calendar-check"></i>
                 </div>
 
                 <h3>Minhas Reservas</h3>
@@ -87,7 +89,7 @@ $nome = $_SESSION['cliente_nome'];
             <div class="cliente-card">
 
                 <div class="cliente-card-icon">
-                    📅
+                    <i class="bi bi-calendar-plus"></i>
                 </div>
 
                 <h3>Nova Reserva</h3>
@@ -106,7 +108,7 @@ $nome = $_SESSION['cliente_nome'];
             <div class="cliente-card">
 
                 <div class="cliente-card-icon">
-                    🗓️
+                    <i class="bi bi-calendar-event"></i>
                 </div>
 
                 <h3>Disponibilidade</h3>

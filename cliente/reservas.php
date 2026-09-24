@@ -1,25 +1,29 @@
+
 <?php
 
 session_start();
-
-require_once '../config/conexao.php';
 
 if (!isset($_SESSION['cliente_id'])) {
     header("Location: login.php");
     exit;
 }
 
-$cliente_id = $_SESSION['cliente_id'];
+require_once '../config/conexao.php';
 
-$sql = "SELECT *
-        FROM reserva
-        WHERE cliente_id = :cliente_id
-        ORDER BY data_reserva DESC";
+$clienteId = $_SESSION['cliente_id'];
+$nome = $_SESSION['cliente_nome'];
+
+$sql = "
+    SELECT id, data_reserva, status
+    FROM reserva
+    WHERE cliente_id = :cliente_id
+    ORDER BY data_reserva DESC
+";
 
 $stmt = $conn->prepare($sql);
 
 $stmt->execute([
-    ':cliente_id' => $cliente_id
+    ':cliente_id' => $clienteId
 ]);
 
 $reservas = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -35,7 +39,9 @@ $reservas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Minhas Reservas - SRP</title>
+    <title>Minhas Reservas - Vale Verde</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <link rel="stylesheet" href="../css/style.css">
 
@@ -49,115 +55,108 @@ $reservas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <div class="cliente-logo">
 
-            <span>🎣</span>
+            <span><i class="bi bi-water"></i></span>
 
             <div>
-                <h1>Pesqueiro Recanto Verde</h1>
-                <p>Sistema de Reservas</p>
+
+                <h1>Vale Verde</h1>
+
+                <p>Painel do Cliente</p>
+
             </div>
 
         </div>
 
-        <a href="logout.php" class="cliente-sair">
-            Sair
+        <a href="area_cliente.php" class="cliente-sair">
+            Voltar
         </a>
 
     </header>
 
     <main class="cliente-content">
 
-        <div class="page-header">
+        <div class="cliente-welcome">
 
-            <div>
+            <h2>Minhas Reservas</h2>
 
-                <h2>Minhas Reservas</h2>
-
-                <p>
-                    Consulte suas reservas realizadas.
-                </p>
-
-            </div>
-
-            <a href="area_cliente.php" class="btn-secondary">
-                ← Voltar
-            </a>
+            <p>
+                Olá, <?= htmlspecialchars($nome) ?>!
+                Consulte suas reservas realizadas.
+            </p>
 
         </div>
 
+        <div class="cliente-card">
 
-        <?php if (count($reservas) > 0): ?>
+            <h3>Reservas realizadas</h3>
 
-            <div class="cliente-reservas">
+            <?php if (count($reservas) > 0): ?>
 
-                <?php foreach ($reservas as $reserva): ?>
+                <div class="table-responsive">
 
-                    <div class="reserva-card">
+                    <table class="table">
 
-                        <div class="reserva-icon">
-                            📅
-                        </div>
+                        <thead>
 
+                            <tr>
 
-                        <div class="reserva-info">
+                                <th>ID</th>
 
-                            <h3>
-                                Reserva #<?= htmlspecialchars($reserva['id']) ?>
-                            </h3>
+                                <th>Data</th>
 
-                            <p>
-                                <strong>Data:</strong>
+                                <th>Status</th>
 
-                                <?= date(
-                                    'd/m/Y',
-                                    strtotime($reserva['data_reserva'])
-                                ) ?>
-                            </p>
+                            </tr>
 
-                            <p>
-                                <strong>Status:</strong>
+                        </thead>
 
-                                <span class="reserva-status">
-                                    <?= htmlspecialchars($reserva['status']) ?>
-                                </span>
-                            </p>
+                        <tbody>
 
-                        </div>
+                            <?php foreach ($reservas as $reserva): ?>
 
-                    </div>
+                                <tr>
 
-                <?php endforeach; ?>
+                                    <td>
+                                        <?= htmlspecialchars($reserva['id']) ?>
+                                    </td>
 
-            </div>
+                                    <td>
+                                        <?= date(
+                                            'd/m/Y',
+                                            strtotime($reserva['data_reserva'])
+                                        ) ?>
+                                    </td>
 
-        <?php else: ?>
+                                    <td>
+                                        <?= htmlspecialchars($reserva['status']) ?>
+                                    </td>
 
-            <div class="empty">
+                                </tr>
 
-                <div style="font-size: 40px;">
-                    📅
+                            <?php endforeach; ?>
+
+                        </tbody>
+
+                    </table>
+
                 </div>
 
-                <h3>
-                    Você ainda não possui reservas
-                </h3>
+            <?php else: ?>
 
                 <p>
-                    Faça sua primeira reserva para aproveitar
-                    o Pesqueiro Recanto Verde.
+                    Você ainda não possui reservas.
                 </p>
-
-                <br>
 
                 <a
                     href="../reserva/cadastrar.php"
-                    class="btn-primary"
+                    class="cliente-button"
                 >
-                    Fazer uma reserva
+                    Fazer minha primeira reserva
                 </a>
 
-            </div>
+            <?php endif; ?>
 
-        <?php endif; ?>
+        </div>
 
     </main>
 

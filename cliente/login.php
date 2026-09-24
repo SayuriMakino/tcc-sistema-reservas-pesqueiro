@@ -60,6 +60,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <title>Login - SRP</title>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <link rel="stylesheet" href="../css/style.css">
 
 </head>
@@ -75,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="auth-logo">
 
                     <div class="auth-logo-icon">
-                        🎣
+                        <i class="bi bi-water"></i>
                     </div>
 
                     <h1>Pesqueiro Recanto Verde</h1>
@@ -93,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div class="benefit-card">
 
-                        <div class="benefit-icon">📅</div>
+                        <div class="benefit-icon"><i class="bi bi-calendar-check"></i></div>
 
                         <h3>Reservas Online</h3>
 
@@ -107,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div class="benefit-card">
 
-                        <div class="benefit-icon">📋</div>
+                        <div class="benefit-icon"><i class="bi bi-clock-history"></i></div>
 
                         <h3>Histórico</h3>
 
@@ -121,7 +123,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div class="benefit-card">
 
-                        <div class="benefit-icon">💬</div>
+                        <div class="benefit-icon"><i class="bi bi-chat-dots"></i></div>
 
                         <h3>Suporte</h3>
 
@@ -135,7 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div class="benefit-card">
 
-                        <div class="benefit-icon">⭐</div>
+                        <div class="benefit-icon"><i class="bi bi-star"></i></div>
 
                         <h3>Benefícios</h3>
 
@@ -213,7 +215,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 required>
 
                             <span class="password-icon">
-                                ◉
+                                <i class="bi bi-eye"></i>
                             </span>
 
                         </div>

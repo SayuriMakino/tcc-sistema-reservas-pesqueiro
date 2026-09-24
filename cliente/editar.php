@@ -101,6 +101,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <title>Editar Cliente - SRP</title>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <link rel="stylesheet" href="../css/style.css">
 
 </head>
@@ -113,45 +115,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <div class="logo">
 
-            <h2>Pesqueiro</h2>
+            <div class="logo-icon">
+                <i class="bi bi-water"></i>
+            </div>
 
-            <p>Sistema de Reservas</p>
+            <div>
+                <strong>Vale Verde</strong>
+                <span>Painel Admin</span>
+            </div>
 
         </div>
 
-        <ul class="menu">
+        <nav class="menu">
 
-            <li>
-                <a href="../admin/dashboard.php">
-                    Dashboard
-                </a>
-            </li>
+            <a href="../admin/dashboard.php" class="menu-item">
+                <i class="bi bi-grid"></i>
+                <span>Dashboard</span>
+            </a>
 
-            <li>
-                <a href="../reserva/listar.php">
-                    Reservas
-                </a>
-            </li>
+            <a href="../reserva/listar.php" class="menu-item">
+                <i class="bi bi-calendar-check"></i>
+                <span>Reservas</span>
+            </a>
 
-            <li>
-                <a href="listar.php" class="active">
-                    Clientes
-                </a>
-            </li>
+            <a href="listar.php" class="menu-item active">
+                <i class="bi bi-people"></i>
+                <span>Clientes</span>
+            </a>
 
-            <li>
-                <a href="#">
-                    Disponibilidade
-                </a>
-            </li>
+            <a href="#" class="menu-item">
+                <i class="bi bi-currency-dollar"></i>
+                <span>Valores</span>
+            </a>
 
-            <li>
-                <a href="#">
-                    Relatórios
-                </a>
-            </li>
+            <a href="../admin/alterar_senha.php" class="menu-item">
+                <i class="bi bi-gear"></i>
+                <span>Configurações</span>
+            </a>
 
-        </ul>
+        </nav>
 
     </aside>
 

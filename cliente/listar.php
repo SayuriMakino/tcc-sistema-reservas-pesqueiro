@@ -21,10 +21,9 @@ $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <title>Clientes - Vale Verde</title>
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
 
 </head>
 
@@ -43,7 +42,7 @@ $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="logo">
 
                 <div class="logo-icon">
-                    ≋
+                    <i class="bi bi-water"></i>
                 </div>
 
                 <div class="logo-text">
@@ -63,7 +62,7 @@ $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 <a href="../admin/dashboard.php" class="menu-item">
 
-                    <i class="fa-solid fa-grip"></i>
+                    <i class="bi bi-grid"></i>
 
                     <span>Dashboard</span>
 
@@ -72,7 +71,7 @@ $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 <a href="../reserva/listar.php" class="menu-item">
 
-                    <i class="fa-regular fa-calendar-check"></i>
+                    <i class="bi bi-calendar-check"></i>
 
                     <span>Reservas</span>
 
@@ -81,7 +80,7 @@ $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 <a href="listar.php" class="menu-item active">
 
-                    <i class="fa-solid fa-users"></i>
+                    <i class="bi bi-people"></i>
 
                     <span>Clientes</span>
 
@@ -90,7 +89,7 @@ $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 <a href="#" class="menu-item">
 
-                    <i class="fa-solid fa-dollar-sign"></i>
+                    <i class="bi bi-currency-dollar"></i>
 
                     <span>Valores</span>
 
@@ -99,7 +98,7 @@ $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 <a href="#" class="menu-item">
 
-                    <i class="fa-solid fa-gear"></i>
+                    <i class="bi bi-gear"></i>
 
                     <span>Configurações</span>
 
@@ -113,7 +112,7 @@ $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="admin-area">
 
                 <div class="admin-avatar">
-                    ♙
+                    <i class="bi bi-person"></i>
                 </div>
 
                 <div class="admin-info">
@@ -128,7 +127,7 @@ $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     href="../admin/logout.php"
                     class="logout"
                     title="Sair">
-                    ⇥
+                    <i class="bi bi-box-arrow-right"></i>
                 </a>
 
             </div>
@@ -170,10 +169,12 @@ $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             <div class="search-box">
 
+                <i class="bi bi-search search-icon"></i>
+
                 <input
                     type="text"
                     id="buscarCliente"
-                    placeholder="🔍 Buscar cliente por nome...">
+                    placeholder="Buscar cliente por nome...">
 
             </div>
 
@@ -261,7 +262,7 @@ $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <a
                                     href="excluir.php?id=<?= $cliente['id'] ?>"
                                     class="btn-delete"
-                                    onclick="return confirm('Tem certeza que deseja excluir este cliente?')">
+                                    onclick="return confirm('Tem certeza que deseja excluir este cliente? As reservas dele também serão excluídas.')">
                                     Excluir
                                 </a>
 

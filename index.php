@@ -15,6 +15,8 @@ $imagemPesqueiro = 'arquivos/img.jpg';
 
     <title>Pesqueiro Recanto Verde</title>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -31,7 +33,7 @@ $imagemPesqueiro = 'arquivos/img.jpg';
         <div class="site-logo">
 
             <div class="logo-icon">
-                🎣
+                <i class="bi bi-water"></i>
             </div>
 
             <div>
@@ -175,7 +177,7 @@ $imagemPesqueiro = 'arquivos/img.jpg';
             <div class="about-feature">
 
                 <div class="feature-icon">
-                    🎣
+                    <i class="bi bi-water"></i>
                 </div>
 
                 <div>
@@ -195,7 +197,7 @@ $imagemPesqueiro = 'arquivos/img.jpg';
             <div class="about-feature">
 
                 <div class="feature-icon">
-                    🌿
+                    <i class="bi bi-tree"></i>
                 </div>
 
                 <div>
@@ -215,7 +217,7 @@ $imagemPesqueiro = 'arquivos/img.jpg';
             <div class="about-feature">
 
                 <div class="feature-icon">
-                    👨‍👩‍👧
+                    <i class="bi bi-people"></i>
                 </div>
 
                 <div>
@@ -265,7 +267,7 @@ $imagemPesqueiro = 'arquivos/img.jpg';
             <div class="service-card">
 
                 <div class="service-card-icon">
-                    🎣
+                    <i class="bi bi-water"></i>
                 </div>
 
                 <h3>
@@ -283,7 +285,7 @@ $imagemPesqueiro = 'arquivos/img.jpg';
             <div class="service-card">
 
                 <div class="service-card-icon">
-                    🐟
+                    <i class="bi bi-basket"></i>
                 </div>
 
                 <h3>
@@ -301,7 +303,7 @@ $imagemPesqueiro = 'arquivos/img.jpg';
             <div class="service-card">
 
                 <div class="service-card-icon">
-                    🌿
+                    <i class="bi bi-tools"></i>
                 </div>
 
                 <h3>
@@ -319,7 +321,7 @@ $imagemPesqueiro = 'arquivos/img.jpg';
             <div class="service-card">
 
                 <div class="service-card-icon">
-                    ⭐
+                    <i class="bi bi-star"></i>
                 </div>
 
                 <h3>
@@ -516,7 +518,7 @@ $imagemPesqueiro = 'arquivos/img.jpg';
             <div>
 
                 <div class="footer-logo">
-                    🎣 Pesqueiro Recanto Verde
+                    <i class="bi bi-water"></i> Pesqueiro Recanto Verde
                 </div>
 
                 <p>
@@ -551,11 +553,11 @@ $imagemPesqueiro = 'arquivos/img.jpg';
                 </h4>
 
                 <p>
-                    📍 Deodápolis - MS
+                    <i class="bi bi-geo-alt"></i> Deodápolis - MS
                 </p>
 
                 <p>
-                    📞 (67) 99999-9999
+                    <i class="bi bi-telephone"></i> (67) 99999-9999
                 </p>
 
             </div>

@@ -36,7 +36,7 @@ $nomeAdmin = $_SESSION["admin_nome"];
 
 <body>
 
-    <div class="dashboard">
+    <div class="layout">
 
         <aside class="sidebar">
 
@@ -133,7 +133,7 @@ $nomeAdmin = $_SESSION["admin_nome"];
 
         </aside>
 
-        <main class="main-content">
+        <main class="content">
 
 
             <div class="page-header">
@@ -380,9 +380,6 @@ $nomeAdmin = $_SESSION["admin_nome"];
 
                 </div>
 
-
-
-                <!-- RESUMO -->
 
                 <div class="panel">
 
