@@ -1884,3 +1884,741 @@ button {
         scroll-behavior: auto !important;
     }
 }
+
+/* =========================================================
+   DISPONIBILIDADE
+   ========================================================= */
+
+.disponibilidade-page {
+    min-height: 100vh;
+    background: var(--bg);
+}
+
+.disponibilidade-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 35px;
+}
+
+.disponibilidade-header {
+    margin-bottom: 25px;
+}
+
+.disponibilidade-header h1 {
+    margin: 0 0 6px;
+    color: var(--text);
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.disponibilidade-header p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.disponibilidade-info {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 22px;
+    padding: 13px 16px;
+
+    background: var(--green-50);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    color: var(--green-600);
+    font-size: 12px;
+}
+
+.disponibilidade-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.disponibilidade-card {
+    padding: 20px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.disponibilidade-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 17px;
+}
+
+.disponibilidade-dia {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.disponibilidade-status {
+    color: var(--success);
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.disponibilidade-status::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    margin-right: 5px;
+
+    background: var(--success);
+    border-radius: 50%;
+}
+
+.disponibilidade-data {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 14px;
+
+    color: var(--text);
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.disponibilidade-data i {
+    color: var(--green-600);
+}
+
+.disponibilidade-reservas {
+    min-height: 20px;
+    margin-bottom: 18px;
+
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.disponibilidade-reservas i {
+    margin-right: 4px;
+    color: var(--green-600);
+}
+
+.disponibilidade-card .cliente-button {
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 1000px) {
+
+    .disponibilidade-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .disponibilidade-content {
+        padding: 30px 20px;
+    }
+
+    .disponibilidade-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================================================
+   RELATÓRIO DE RESERVAS - DASHBOARD
+   ========================================================= */
+
+.relatorio-dashboard {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.relatorio-dashboard .panel {
+    width: 100%;
+}
+
+/* =========================================================
+   FILTROS
+   ========================================================= */
+
+.relatorio-dashboard-filtros {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    align-items: end;
+    gap: 14px;
+    margin-bottom: 22px;
+    padding: 16px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.relatorio-dashboard-filtros > div {
+    min-width: 0;
+}
+
+.relatorio-dashboard-filtros label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.relatorio-dashboard-filtros input,
+.relatorio-dashboard-filtros select {
+    width: 100%;
+    height: 40px;
+    padding: 0 11px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: var(--surface);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 12px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.relatorio-dashboard-filtros input:focus,
+.relatorio-dashboard-filtros select:focus {
+    border-color: var(--green-600);
+    box-shadow: 0 0 0 3px rgba(40, 115, 84, 0.08);
+}
+
+/* =========================================================
+   BOTÕES DO RELATÓRIO
+   ========================================================= */
+
+.relatorio-dashboard-botoes {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.relatorio-dashboard-botoes .btn-primary,
+.relatorio-dashboard-botoes .btn-secondary {
+    height: 40px;
+    white-space: nowrap;
+}
+
+/* botão secundário */
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 0 14px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: var(--surface);
+    color: var(--muted);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.btn-secondary:hover {
+    border-color: var(--green-600);
+    color: var(--green-600);
+    text-decoration: none;
+}
+
+/* =========================================================
+   RESUMO DO RELATÓRIO
+   ========================================================= */
+
+.relatorio-resumo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.relatorio-resumo > div {
+    min-width: 0;
+    padding: 15px 16px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.relatorio-resumo span {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.relatorio-resumo strong {
+    display: block;
+    color: var(--text);
+    font-size: 22px;
+    font-weight: 500;
+}
+
+/* =========================================================
+   TABELA DO RELATÓRIO
+   ========================================================= */
+
+.relatorio-dashboard .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.relatorio-dashboard .table {
+    width: 100%;
+}
+
+.relatorio-dashboard .table td strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+/* =========================================================
+   NENHUM RESULTADO
+   ========================================================= */
+
+.relatorio-vazio-dashboard {
+    height: 150px;
+    text-align: center !important;
+    vertical-align: middle !important;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.relatorio-vazio-dashboard i {
+    margin-right: 7px;
+    color: var(--green-600);
+    font-size: 17px;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .relatorio-dashboard-filtros {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .relatorio-dashboard-botoes {
+        grid-column: span 2;
+    }
+
+    .relatorio-resumo {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .relatorio-dashboard-filtros {
+        grid-template-columns: 1fr;
+    }
+
+    .relatorio-dashboard-botoes {
+        grid-column: auto;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .relatorio-dashboard-botoes .btn-primary,
+    .relatorio-dashboard-botoes .btn-secondary {
+        width: 100%;
+    }
+
+    .relatorio-resumo {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================================================
+   CALENDÁRIO - DISPONIBILIDADE
+   ========================================================= */
+
+.calendario-container {
+    width: 100%;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.calendario-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.calendario-titulo {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 8px;
+}
+
+.calendario-titulo h2 {
+    margin: 0;
+    color: var(--text);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.calendario-titulo span {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.calendario-navegacao {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border);
+    border-radius: 7px;
+
+    background: var(--surface);
+    color: var(--muted);
+
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.calendario-navegacao:hover {
+    border-color: var(--green-600);
+    color: var(--green-600);
+    background: var(--green-50);
+}
+
+
+/* =========================================================
+   DIAS DA SEMANA
+   ========================================================= */
+
+.calendario-semana {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.calendario-semana div {
+    padding: 10px 5px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.calendario-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    border-left: 1px solid var(--border);
+    border-top: 1px solid var(--border);
+}
+
+
+/* =========================================================
+   DIA
+   ========================================================= */
+
+.calendario-dia {
+    min-height: 145px;
+
+    padding: 12px;
+
+    background: var(--surface);
+
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+
+    transition: 0.2s;
+}
+
+.calendario-dia:not(.vazio):not(.passado):hover {
+    background: var(--green-50);
+}
+
+.calendario-dia.vazio {
+    background: var(--surface-2);
+}
+
+
+/* =========================================================
+   NÚMERO DO DIA
+   ========================================================= */
+
+.calendario-dia-numero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+
+    color: var(--text);
+
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.calendario-hoje {
+    padding: 3px 6px;
+
+    border-radius: 10px;
+
+    background: var(--green-600);
+    color: #ffffff;
+
+    font-size: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   DATA DE HOJE
+   ========================================================= */
+
+.calendario-dia.hoje {
+    background: #f2f9f5;
+}
+
+.calendario-dia.hoje .calendario-dia-numero {
+    color: var(--green-600);
+}
+
+
+/* =========================================================
+   DISPONIBILIDADE
+   ========================================================= */
+
+.calendario-disponivel {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    margin-bottom: 9px;
+
+    color: var(--success);
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.calendario-disponivel i {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   RESERVAS
+   ========================================================= */
+
+.calendario-reservas {
+    min-height: 28px;
+
+    margin-bottom: 10px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+.calendario-reservas i {
+    margin-right: 3px;
+
+    color: var(--green-600);
+}
+
+
+/* =========================================================
+   BOTÃO
+   ========================================================= */
+
+.calendario-botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    width: 100%;
+    min-height: 32px;
+
+    padding: 6px 8px;
+
+    border-radius: 6px;
+
+    background: var(--green-600);
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.calendario-botao:hover {
+    background: #205b42;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   DATAS PASSADAS
+   ========================================================= */
+
+.calendario-dia.passado {
+    background: var(--surface-2);
+}
+
+.calendario-dia.passado .calendario-dia-numero {
+    color: #aeb7b2;
+}
+
+.calendario-passado {
+    margin-top: 25px;
+
+    color: #aeb7b2;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   LEGENDA
+   ========================================================= */
+
+.calendario-legenda {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    margin-top: 20px;
+    padding-top: 16px;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+.calendario-legenda div {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legenda-ponto {
+    width: 8px;
+    height: 8px;
+
+    display: inline-block;
+
+    border-radius: 50%;
+}
+
+.legenda-ponto.disponivel {
+    background: var(--success);
+}
+
+.legenda-ponto.hoje {
+    background: var(--green-600);
+}
+
+.calendario-legenda i {
+    color: var(--green-600);
+}
+
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .calendario-dia {
+        min-height: 125px;
+        padding: 9px;
+    }
+
+    .calendario-disponivel {
+        font-size: 9px;
+    }
+
+    .calendario-reservas {
+        font-size: 9px;
+    }
+
+    .calendario-botao {
+        font-size: 9px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .calendario-container {
+        padding: 15px;
+        overflow-x: auto;
+    }
+
+    .calendario-grid,
+    .calendario-semana {
+        min-width: 650px;
+    }
+
+    .calendario-header {
+        min-width: 650px;
+    }
+
+    .calendario-legenda {
+        min-width: 650px;
+    }
+
+}
